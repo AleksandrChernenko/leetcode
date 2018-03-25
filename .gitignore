@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/src/.vs/leetcode/v15
+/src/leetcode/bin/Debug/netstandard1.4
+/src/leetcode/obj
+/src/leetcode.tests/bin/Debug
+/src/leetcode.tests/obj/Debug
+/src/packages
