@@ -32,5 +32,35 @@ namespace leetcode
 
             return jewelCount;
         }
+
+        /// <summary>
+        /// 657. Judge Route Circle
+        /// </summary>
+        /// https://leetcode.com/problems/judge-route-circle/description/
+        public bool JudgeCircle(string moves)
+        {
+            int x = 0, y = 0;
+
+            foreach (var move in moves)
+            {
+                switch (move)
+                {
+                    case 'R':
+                        x = ++x;
+                        break;
+                    case 'L':
+                        x = --x;
+                        break;
+                    case 'U':
+                        y = ++y;
+                        break;
+                    case 'D':
+                        y = --y;
+                        break;
+                }
+            }
+
+            return x == 0 && y == 0;
+        }
     }
 }
