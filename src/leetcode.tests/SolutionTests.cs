@@ -34,5 +34,24 @@ namespace leetcode.tests
             new object[] {"ULDR", true},
             new object[] { "RLUURDDDLU", true},
         };
+
+        [Test, TestCaseSource(nameof(TitleToNumberTestCaseSource))]
+        public void TitleToNumber_InitData_Valid(string input, int result)
+        {
+            var solution = new Solution();
+
+            Assert.That(result, Is.EqualTo(solution.TitleToNumber(input)));
+        }
+
+        public static object[] TitleToNumberTestCaseSource =
+        {
+            new object[] {"A", 1},
+            new object[] {"B", 2},
+            new object[] {"C", 3},
+            new object[] {"Z", 26},
+            new object[] {"AA", 27},
+            new object[] {"AB", 28},
+            new object[] {"ZZ", 702},
+        };
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace leetcode
 {
@@ -61,6 +62,22 @@ namespace leetcode
             }
 
             return x == 0 && y == 0;
+        }
+
+        /// <summary>
+        /// 171. Excel Sheet Column Number
+        /// </summary>
+        /// https://leetcode.com/problems/excel-sheet-column-number/description/
+        public int TitleToNumber(string s)
+        {
+            var titleNumber = 0;
+
+            for (int i = s.Length - 1; i >= 0; i--)
+            {
+                titleNumber = (int) ((s[i] - 64) * Math.Pow(26, s.Length - 1 - i) + titleNumber);
+            }
+
+            return titleNumber;
         }
     }
 }
