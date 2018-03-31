@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace leetcode
 {
@@ -74,10 +73,22 @@ namespace leetcode
 
             for (int i = s.Length - 1; i >= 0; i--)
             {
-                titleNumber = (int) ((s[i] - 64) * Math.Pow(26, s.Length - 1 - i) + titleNumber);
+                titleNumber = (int) ((s[i] - 64) * Pow(26, s.Length - 1 - i) + titleNumber);
             }
 
             return titleNumber;
+        }
+
+        private int Pow(int @base, int exponent)
+        {
+            var result = 1;
+            while (exponent > 0)
+            {
+                result = result * @base;
+                exponent = --exponent;
+            }
+
+            return result;
         }
     }
 }
