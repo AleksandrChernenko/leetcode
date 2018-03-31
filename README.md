@@ -8,11 +8,8 @@
 <table>
   <tr>
     <td><h2>Arrays</h2></td>
-    <td><h2>Math</h2></td>
-  </tr>
-  <tr>
-    <td></td>
     <td>
+      <h2>Math</h2>
       <h4>Easy</h4>
       <ol>
         <li><a href="https://leetcode.com/problems/excel-sheet-column-number/description/">171. Excel Sheet Column Number</a></li>
