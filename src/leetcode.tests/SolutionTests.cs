@@ -68,5 +68,22 @@ namespace leetcode.tests
             new object[] {"MM", 2000},
             new object[] { "MMMCMXCIX", 3999}
         };
+
+        [Test, TestCaseSource(nameof(MissingNumberTestCaseSource))]
+        public void MissingNumber_InitData_Valid(int[] nums, int result)
+        {
+            var solution = new Solution();
+
+            Assert.That(result, Is.EqualTo(solution.MissingNumber(nums)));
+        }
+
+        public static object[] MissingNumberTestCaseSource =
+        {
+            new object[] {new int[] {9, 6, 4, 2, 3, 5, 7, 0, 1}, 8},
+            new object[] {new int[] {0}, 1},
+            new object[] {new int[] {1}, 0},
+            new object[] {new int[] {1}, 0},
+            new object[] {new int[] {0, 1}, 2},
+        };
     }
 }

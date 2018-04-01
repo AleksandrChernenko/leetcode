@@ -14,6 +14,7 @@
       <ol>
         <li><a href="https://leetcode.com/problems/excel-sheet-column-number/description/">171. Excel Sheet Column Number</a></li>
 		<li><a href="https://leetcode.com/problems/roman-to-integer/description/">13. Roman to Integer</a></li>
+		<li><a href="https://leetcode.com/problems/missing-number/description/">268. Missing Number</a></li>
       </ol>
     </td>
   </tr>

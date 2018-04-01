@@ -136,5 +136,24 @@ namespace leetcode
 
             return intNumber;
         }
+
+        public int MissingNumber(int[] nums)
+        {
+
+            var tempHashSet = new HashSet<int>();
+
+            foreach (var num in nums)
+            {
+                tempHashSet.Add(num);
+            }
+
+            for (int i = 0; i <= nums.Length; i++)
+            {
+                if (!tempHashSet.Contains(i))
+                    return i;
+            }
+
+            return 0;
+        }
     }
 }
