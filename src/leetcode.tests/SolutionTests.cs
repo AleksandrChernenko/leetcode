@@ -53,5 +53,20 @@ namespace leetcode.tests
             new object[] {"AB", 28},
             new object[] {"ZZ", 702},
         };
+
+        [Test, TestCaseSource(nameof(RomanToIntTestCaseSource))]
+        public void RomanToInt_InitData_Valid(string s, int result)
+        {
+            var solution = new Solution();
+
+            Assert.That(result, Is.EqualTo(solution.RomanToInt(s)));
+        }
+
+        private static readonly object[] RomanToIntTestCaseSource =
+        {
+            new object[] {"I", 1},
+            new object[] {"MM", 2000},
+            new object[] { "MMMCMXCIX", 3999}
+        };
     }
 }

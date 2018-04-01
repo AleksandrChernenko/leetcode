@@ -90,5 +90,51 @@ namespace leetcode
 
             return result;
         }
+
+        /// <summary>
+        /// 13. Roman to Integer
+        /// </summary>
+        /// https://leetcode.com/problems/roman-to-integer/description/
+
+        private readonly Dictionary<char, int> romanToIntDictionary = new Dictionary<char, int>
+        {
+            {'I', 1 },
+            {'V', 5 },
+            {'X', 10 },
+            {'L', 50 },
+            {'C', 100 },
+            {'D', 500 },
+            {'M', 1000 }
+        };
+        public int RomanToInt(string s)
+        {
+            int i = 0, intNumber = 0, blockSum = 0;
+
+            while (i < s.Length)
+            {
+                if (i + 1 >= s.Length || romanToIntDictionary[s[i]] > romanToIntDictionary[s[i+1]])
+                {
+                    intNumber = intNumber + romanToIntDictionary[s[i]];
+                    ++i;
+                    continue;
+                }
+
+                if (romanToIntDictionary[s[i]] == romanToIntDictionary[s[i + 1]])
+                {
+                    intNumber = romanToIntDictionary[s[i]] + intNumber;
+                    ++i;
+                    continue;
+                }
+
+                if (romanToIntDictionary[s[i]] < romanToIntDictionary[s[i + 1]])
+                {
+                    intNumber = intNumber - romanToIntDictionary[s[i]] ;
+                    ++i;
+                    continue;
+                }
+            }
+
+            return intNumber;
+        }
     }
 }
