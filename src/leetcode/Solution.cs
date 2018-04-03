@@ -137,6 +137,10 @@ namespace leetcode
             return intNumber;
         }
 
+        /// <summary>
+        /// 268. Missing Number
+        /// </summary>
+        /// https://leetcode.com/problems/missing-number/description/
         public int MissingNumber(int[] nums)
         {
 
@@ -155,5 +159,31 @@ namespace leetcode
 
             return 0;
         }
+
+        /// <summary>
+        /// 283. Move Zeroes
+        /// </summary>
+        /// https://leetcode.com/problems/move-zeroes/description/
+        public int[] MoveZeroes(int[] nums)
+        {
+            var insertPosition = 0;
+
+            foreach (var num in nums)
+            {
+                if (num != 0)
+                {
+                    nums[insertPosition++] = num;
+                }
+            }
+
+            while (insertPosition < nums.Length)
+            {
+                nums[insertPosition++] = 0;
+            }
+
+            return nums;
+        }
+
+        
     }
 }

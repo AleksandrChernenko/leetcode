@@ -85,5 +85,18 @@ namespace leetcode.tests
             new object[] {new int[] {1}, 0},
             new object[] {new int[] {0, 1}, 2},
         };
+
+        [Test, TestCaseSource(nameof(MoveZeroesTestCaseSource))]
+        public void MoveZeroes_InitData_Valid(int[] nums, int[] result)
+        {
+            var solution = new Solution();
+
+            Assert.That(result, Is.EqualTo(solution.MoveZeroes(nums)));
+        }
+
+        public static object[] MoveZeroesTestCaseSource =
+        {
+            new object[] {new[] { 0, 1, 0, 3, 12 }, new[] {1, 3, 12, 0, 0}}
+        };
     }
 }

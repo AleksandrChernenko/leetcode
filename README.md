@@ -7,7 +7,14 @@
 
 <table>
   <tr>
-    <td><h2>Arrays</h2></td>
+    <td>
+		<h2>Arrays</h2>
+		<h4>Easy</h4>
+			<ol>
+				<li><a href="https://leetcode.com/problems/move-zeroes/">283. Move Zeroes</a></li>
+			</ol>
+		
+	</td>
     <td>
       <h2>Math</h2>
       <h4>Easy</h4>
