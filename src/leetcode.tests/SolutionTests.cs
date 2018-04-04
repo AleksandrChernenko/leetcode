@@ -98,5 +98,19 @@ namespace leetcode.tests
         {
             new object[] {new[] { 0, 1, 0, 3, 12 }, new[] {1, 3, 12, 0, 0}}
         };
+
+        [Test, TestCaseSource(nameof(MajorityElementTestCases))]
+        public void MajorityElement_InitData_Valid(int[] nums, int result)
+        {
+            var solution = new Solution();
+
+            Assert.That(result, Is.EqualTo(solution.MajorityElement(nums)));
+        }
+
+        public static object[] MajorityElementTestCases =
+        {
+            new object[] {new[]{6, 5, 5}, 5},
+            new object[] {new[]{1}, 1},
+        };
     }
 }

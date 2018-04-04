@@ -184,6 +184,34 @@ namespace leetcode
             return nums;
         }
 
-        
+        /// <summary>
+        /// 169. Majority Element
+        /// </summary>
+        /// https://leetcode.com/problems/majority-element/solution/
+        public int MajorityElement(int[] nums)
+        {
+            var counts = new Dictionary<int, int>();
+            for(int i = 0; i < nums.Length; i++)
+            {
+                
+
+                if (counts.ContainsKey(nums[i]))
+                {
+                    counts[nums[i]] = counts[nums[i]] + 1;
+
+                }
+                else
+                {
+                    counts.Add(nums[i], 1);
+                }
+
+                if (counts[nums[i]] > nums.Length / 2)
+                    return nums[i];
+            }
+
+            return 0;
+        }
+
+
     }
 }
