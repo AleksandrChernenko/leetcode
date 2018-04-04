@@ -212,6 +212,25 @@ namespace leetcode
             return 0;
         }
 
-
+        /// <summary>
+        /// 217. Contains Duplicate
+        /// </summary>
+        /// https://leetcode.com/problems/contains-duplicate/description/
+        public bool ContainsDuplicate(int[] nums)
+        {
+            var counts = new HashSet<int>();
+            foreach (var num in nums)
+            {
+                if (counts.Contains(num))
+                {
+                    return true;
+                }
+                else
+                {
+                    counts.Add(num);
+                }
+            }
+            return false;
+        }
     }
 }
