@@ -112,5 +112,24 @@ namespace leetcode.tests
             new object[] {new[]{6, 5, 5}, 5},
             new object[] {new[]{1}, 1},
         };
+
+        [Test, TestCaseSource(nameof(MySqrtTestCases))]
+        public void MySqrt_InitData_Valid(int x, int result)
+        {
+            var solution = new Solution();
+
+            Assert.That(result, Is.EqualTo(solution.MySqrt(x)));
+        }
+
+        public static object[] MySqrtTestCases =
+        {
+            new object[] {1, 1},
+            new object[] {0, 0},
+            new object[] {9, 3},
+            new object[] {16, 4},
+            new object[] {25, 5},
+            new object[] {36, 6},
+            new object[] {8, 2},
+        };
     }
 }
