@@ -13,6 +13,7 @@
 		<ol>
 			<li><a href="https://leetcode.com/problems/move-zeroes/">283. Move Zeroes</a></li>
 			<li><a href="https://leetcode.com/problems/majority-element/description/">169. Majority Element</a></li>
+			<li><a href="https://leetcode.com/problems/contains-duplicate/description/">217. Contains Duplicate</a></li>
 	    </ol>
 </td>
     <td>
