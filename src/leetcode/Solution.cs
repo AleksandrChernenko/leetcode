@@ -257,6 +257,19 @@ namespace leetcode
 
             return ans;
         }
+        
+        /// <summary>
+        /// 1480. Running Sum of 1d Array
+        /// </summary>
+        /// https://leetcode.com/problems/running-sum-of-1d-array/
+        public int[] RunningSum(int[] nums) {
+        for (var i = 1; i < nums.Length; i++)
+            {
+                nums[i] = nums[i - 1] + nums[i];
+            }
+
+            return nums;
+    }
 
     }
 }
