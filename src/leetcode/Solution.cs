@@ -95,24 +95,24 @@ namespace leetcode
         /// 13. Roman to Integer
         /// </summary>
         /// https://leetcode.com/problems/roman-to-integer/description/
-
         private readonly Dictionary<char, int> romanToIntDictionary = new Dictionary<char, int>
         {
-            {'I', 1 },
-            {'V', 5 },
-            {'X', 10 },
-            {'L', 50 },
-            {'C', 100 },
-            {'D', 500 },
-            {'M', 1000 }
+            {'I', 1},
+            {'V', 5},
+            {'X', 10},
+            {'L', 50},
+            {'C', 100},
+            {'D', 500},
+            {'M', 1000}
         };
+
         public int RomanToInt(string s)
         {
             int i = 0, intNumber = 0, blockSum = 0;
 
             while (i < s.Length)
             {
-                if (i + 1 >= s.Length || romanToIntDictionary[s[i]] > romanToIntDictionary[s[i+1]])
+                if (i + 1 >= s.Length || romanToIntDictionary[s[i]] > romanToIntDictionary[s[i + 1]])
                 {
                     intNumber = intNumber + romanToIntDictionary[s[i]];
                     ++i;
@@ -128,7 +128,7 @@ namespace leetcode
 
                 if (romanToIntDictionary[s[i]] < romanToIntDictionary[s[i + 1]])
                 {
-                    intNumber = intNumber - romanToIntDictionary[s[i]] ;
+                    intNumber = intNumber - romanToIntDictionary[s[i]];
                     ++i;
                     continue;
                 }
@@ -143,7 +143,6 @@ namespace leetcode
         /// https://leetcode.com/problems/missing-number/description/
         public int MissingNumber(int[] nums)
         {
-
             var tempHashSet = new HashSet<int>();
 
             foreach (var num in nums)
@@ -191,14 +190,11 @@ namespace leetcode
         public int MajorityElement(int[] nums)
         {
             var counts = new Dictionary<int, int>();
-            for(int i = 0; i < nums.Length; i++)
+            for (int i = 0; i < nums.Length; i++)
             {
-                
-
                 if (counts.ContainsKey(nums[i]))
                 {
                     counts[nums[i]] = counts[nums[i]] + 1;
-
                 }
                 else
                 {
@@ -230,6 +226,7 @@ namespace leetcode
                     counts.Add(num);
                 }
             }
+
             return false;
         }
 
@@ -257,19 +254,48 @@ namespace leetcode
 
             return ans;
         }
-        
+
         /// <summary>
         /// 1480. Running Sum of 1d Array
         /// </summary>
         /// https://leetcode.com/problems/running-sum-of-1d-array/
-        public int[] RunningSum(int[] nums) {
-        for (var i = 1; i < nums.Length; i++)
+        public int[] RunningSum(int[] nums)
+        {
+            for (var i = 1; i < nums.Length; i++)
             {
                 nums[i] = nums[i - 1] + nums[i];
             }
 
             return nums;
+        }
+
+        /// <summary>
+        /// 617. Merge Two Binary Trees
+        /// </summary>
+        /// https://leetcode.com/problems/merge-two-binary-trees/
+        public TreeNode MergeTrees(TreeNode t1, TreeNode t2)
+        {
+            if (t1 == null && t2 == null)
+                return null;
+
+            return new TreeNode(
+                (t1?.val ?? 0) + (t2?.val ?? 0), 
+                MergeTrees(t1?.left, t2?.left), 
+                MergeTrees(t1?.right, t2?.right));
+        }
     }
 
+    public class TreeNode
+    {
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
+
+        public TreeNode(int val = 0, TreeNode left = null, TreeNode right = null)
+        {
+            this.val = val;
+            this.left = left;
+            this.right = right;
+        }
     }
 }
