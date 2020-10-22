@@ -8,3 +8,5 @@
 /src/leetcode.tests/bin/Debug
 /src/leetcode.tests/obj/Debug
 /src/packages
+/src/.vs/leetcode/DesignTimeBuild/.dtbcache.v2
+/src/.vs/leetcode/v16/.suo
