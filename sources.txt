@@ -1,0 +1,12 @@
+344. Reverse String - Write a function that reverses a string. The input string is given as an array of characters s.
+public class Solution {
+    public void ReverseString(char[] s) {
+        int length = s.Length;
+        for(var i = 0; i < length / 2; i++){
+            var endIndex = length - 1 - i;
+            var tmp = s[i];
+            s[i] = s[endIndex];
+            s[endIndex] = tmp;
+        }
+    }
+}
